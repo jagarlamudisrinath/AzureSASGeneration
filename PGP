@@ -1,0 +1,12 @@
+gpg --full-generate-key
+gpg --list-keys
+gpg --export -a 1B42E66576DBC3B57C3F3A282D276B5890ECE7DC > public.key
+gpg --import /path/to/public/key
+gpg --export-secret-keys -a 1B42E66576DBC3B57C3F3A282D276B5890ECE7DC > private.key
+gpg --delete-secret-keys srinathjagarlamudi@bftg.com
+#encryption
+gpg --encrypt --recipient srinathjagarlamudi@bftg.com -o /home/krishna/Downloads/archive/athletes.csv.gpg /home/krishna/Downloads/archive/athletes.csv
+
+#decryption
+az login --identity --allow-no-subscriptions
+az keyvault secret set --name mySecret --value mySecretValue --vault-name AzureBlobShare
